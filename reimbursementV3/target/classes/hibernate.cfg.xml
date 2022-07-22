@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration 
+	SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!-- configure the Hibernate SessionFactory (per database) -->
+	<session-factory>
+		<!-- datasource -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/reimburse</property>
+		<property name="connection.user">root</property>
+		<property name="connection.password">G3a3r3y3</property>
+
+		<!-- query translation (dialect) -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQL5Dialect
+		</property>
+
+		<!-- connection pool -->
+		<property name="connection.pool_size">20</property>
+		<property name="show_sql">true</property>
+
+		<!-- entity mappings -->
+		<mapping class="com.skillstorm.beans.Expenses" />
+		<mapping class="com.skillstorm.beans.ReimbStatus" />
+		
+	</session-factory>
+</hibernate-configuration>
